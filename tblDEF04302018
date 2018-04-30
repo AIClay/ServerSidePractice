@@ -1,0 +1,17 @@
+// TABLE DEF FOR 04302018.htm
+// 
+// 
+// create table tbl_04302018(ID Int AUTO_INCREMENT PRIMARY KEY ,FNAME text,LNAME text,emp_DEPART text);
+//
+// VERSION:=> mysql  Ver 15.1 Distrib 10.1.23-MariaDB, for debian-linux-gnueabihf (armv7l) using readline 5.2
+//
+//
+// hierarchy:
+//
+//    --testDEV [dbase]
+//        --tbl_04302018 [tbl]
+//               --ID  (AUTO SEED PRI KEY) (int) [col]
+//               --FNAME (t) [col]
+//               --LNAME (t) [col]
+//               --emp_DEPART (t) [col]
+//

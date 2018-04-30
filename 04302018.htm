@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset='utf-8'>
+		<title>04302018</title>
+		<!-- Externally linked files {style,scripts} --> 
+		<link rel='stylesheet' href='css/04302018.css' />
+		<!-- Vanilla JavaScript --> 
+		<script type='text/javascript' src='js/04302018.js'></script>
+		<!-- DEBUGGING -->
+		<script type='text/javascript'>
+			
+		</script>
+		<!-- END DEBUGGING --> 
+	</head>
+	<body onload=init(); >
+		<h1>4-30-2018 Test simple PHP / MySQL configuration [Rasberry PI {stretch}]</h1>
+		<hr />
+		<form id='frmINS' method='POST' action='data/ins.php'>
+			<input type='button' value='[Create Ten Records]' onclick=init(); name='tstINS' />
+			<br />
+			<br />
+			<span id='fname'>First Name: </span>&nbsp;<input type='text' rows="1" cols="20" />
+			<br />
+			<span id='lname'>Last Name: </span>&nbsp;<input type='text' rows="1" cols="20" />
+			<br />
+			<span id='depart'>Department: </span>&nbsp;<select id='departs'></select>
+			<br />
+		</form>
+		<br />
+		<form id='frmGET' method='GET' action='data/get.php'>
+			<input type='button' value='[GET RECORDS - Current Vals]' onclick=genTenFaux(); name='tstGET' />
+			
+		</form>
+			
+		<hr />
+					
+		
+		<!-- DISPLAY RECORDS HERE -->
+		<div id='display'></div>
+		<!-- END DISPLAY RECORDS HERE-->
+	
+	
+	</body>

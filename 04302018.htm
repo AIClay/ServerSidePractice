@@ -3,9 +3,9 @@
 		<meta charset='utf-8'>
 		<title>04302018</title>
 		<!-- Externally linked files {style,scripts} --> 
-		<link rel='stylesheet' href='css/04302018.css' />
+		<link rel='stylesheet' href='04302018.css' />
 		<!-- Vanilla JavaScript --> 
-		<script type='text/javascript' src='js/04302018.js'></script>
+		<script type='text/javascript' src='04302018.js'></script>
 		<!-- DEBUGGING -->
 		<script type='text/javascript'>
 			
@@ -15,19 +15,20 @@
 	<body onload=init(); >
 		<h1>4-30-2018 Test simple PHP / MySQL configuration [Rasberry PI {stretch}]</h1>
 		<hr />
-		<form id='frmINS' method='POST' action='data/ins.php'>
-			<input type='button' value='[Create Ten Records]' onclick=init(); name='tstINS' />
+		<form id='frmINS' method='POST' action='ins.php'>
+			
 			<br />
 			<br />
-			<span id='fname'>First Name: </span>&nbsp;<input type='text' rows="1" cols="20" />
+			<span id='fname'>First Name: </span>&nbsp;<input type='text' rows="1" cols="20" name="FNAME" />
 			<br />
-			<span id='lname'>Last Name: </span>&nbsp;<input type='text' rows="1" cols="20" />
+			<span id='lname'>Last Name: </span>&nbsp;<input type='text' rows="1" cols="20" name="LNAME" />
 			<br />
-			<span id='depart'>Department: </span>&nbsp;<select id='departs'></select>
+			<span id='depart'>Department: </span>&nbsp;<select id='departs' name="DEPART"></select>
 			<br />
+			<input type='submit' value='test' name='btnTest' />
 		</form>
 		<br />
-		<form id='frmGET' method='GET' action='data/get.php'>
+		<form id='frmGET' method='GET' action='get.php'>
 			<input type='button' value='[GET RECORDS - Current Vals]' onclick=genTenFaux(); name='tstGET' />
 			
 		</form>

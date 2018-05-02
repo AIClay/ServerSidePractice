@@ -63,4 +63,24 @@ function init()
 	loadDeparts();
 
 }
+//
 
+//XHR GetResults
+
+function getRecords()	
+				{
+					var xhr = new XMLHttpRequest();
+					var tgt = {};	
+					xhr.onreadystatechange = function ()
+					{
+						if (this.readyState ==4 && this.status == 200)
+							{
+							var rText = this.responseText;
+							tgt = JSON.parse(rText);
+							}
+						console.log(tgt.ID + " " + tgt.FNAME);
+					};
+					
+			xhr.open("GET","get.php",true);
+			xhr.send();
+			}

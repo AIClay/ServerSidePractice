@@ -6,5 +6,19 @@
 /  // V 1.0.0 
 /
 /
-/
+*/
 
+
+span.recLineID
+{
+	font-family:"Verdana",sans-serif;
+	font-size:1.2em;
+	color:green;
+}
+
+span.recLineFNAME
+{
+	font-family:"Courier New",monospace;
+	font-size:1.2em;
+	color:blue;
+}

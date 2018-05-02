@@ -8,6 +8,61 @@
 		<script type='text/javascript' src='04302018.js'></script>
 		<!-- DEBUGGING -->
 		<script type='text/javascript'>
+			//XHR GetResults
+			
+			var rec = "";
+			var recs = [];
+			var split_recs = [];
+			function getRecords()	
+				{
+					var xhr = new XMLHttpRequest();
+					var lclAr = [];
+					var lclOBJ = {};
+					var rText = "";
+					xhr.onreadystatechange = function ()
+					{
+						if (this.readyState ==4 && this.status == 200)
+							{
+							rText = this.responseText;
+							lclOBJ = JSON.parse(rText);
+							for (a = 0;a < lclOBJ.records.length;a++)
+							{
+								lclAr.push(lclOBJ.records[a]);
+							}
+						}						
+							
+						// display here
+						for (b = 0;b < lclAr.length;b++)
+						{
+							recs.push(lclAr[b]);		
+						}
+					}
+					
+									
+					
+			xhr.open("GET","get.php",true);
+			xhr.send();
+			
+			var elemSTR = "";
+			var elemSTR_C = "</span><br />";
+			for (c = 0; c < recs.length; c++)
+				{
+				elemSTR += "<span class='recLineID'>ID: " + recs[c].ID + "</span><span class='recLineFNAME'>FNAME: " + recs[c].FNAME + "</span>";
+				}
+		
+			var tgt = document.getElementById('display');
+			tgt.innerHTML = "";
+			tgt.innerHTML = (elemSTR + elemSTR_C);
+			}
+			
+			
+			function CreateRec(ID,FNAME,LNAME,DEPART)
+			{
+				this.ID = ID;
+				this.FNAME = FNAME;
+				this.LNAME = LNAME;
+				this.DEPART = DEPART;
+			}
 			
 		</script>
 		<!-- END DEBUGGING --> 
@@ -28,12 +83,11 @@
 			<input type='submit' value='test' name='btnTest' />
 		</form>
 		<br />
-		<form id='frmGET' method='GET' action='get.php'>
-			<input type='button' value='[GET RECORDS - Current Vals]' onclick=genTenFaux(); name='tstGET' />
-			
-		</form>
-			
+		<br />
+		<br />
 		<hr />
+		
+		<input type='button' value='[GET RECORDS - Current Vals]' onclick=getRecords(); />
 					
 		
 		<!-- DISPLAY RECORDS HERE -->

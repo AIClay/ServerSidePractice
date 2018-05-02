@@ -12,4 +12,55 @@
 		
 	*/
 
+	
+	error_reporting(E_ALL);
+	
+	$strQUERY = "SELECT * FROM tbl_04302018 ORDER BY ID ASC;";
+
+	$link = mysqli_connect("localhost","DEVTEST","test","testDEV");
+	
+	$res = $link->query($strQUERY);
+
+	$opener = "{\"records\":[";
+	$close = "]}";
+	$middle = "";
+	if ($res->num_rows > 0)
+	{
+		$cnt = $res->num_rows;
+		$rwCNT = 0;
+		
+		while ($row= $res->fetch_assoc())
+		{
+		
+		$rwCNT +=1;
+		$id = $row["ID"];
+		$fname = $row["FNAME"];
+		$lname = $row["LNAME"];
+		$depart = $row["emp_DEPART"];
+		
+		
+		if ($rwCNT < $cnt)
+		{
+		$middle = $middle . "{\"ID\":\"$id\",\"FNAME\":\"$fname\",\"LNAME\":\"$lname\",\"DEPART\":\"$depart\"},";
+		}
+		if ($rwCNT >= $cnt)
+		{
+		$middle = $middle .  "{\"ID\":\"$id\",\"FNAME\":\"$fname\",\"LNAME\":\"$lname\",\"DEPART\":\"$depart\"}";
+		}
+	}
+			
+	};
+	
+	$conSTR = $opener . $middle . $close;
+	echo $conSTR;
+
+	$arRES = mysqli_fetch_all($res,MYSQLI_BOTH);
+
+	// DEBUG
+	//echo $arRES;
+	// END DEBUG
+	
+	
 ?>
+
+

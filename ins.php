@@ -14,16 +14,11 @@
 	*/ 
 
 	
-	$fname = $_POST['FNAME'];
-	$lname = $_POST['LNAME'];
-	$depart = $_POST['DEPART'];
+	$fname = $_REQUEST['FNAME'];
+	$lname = $_REQUEST['LNAME'];
+	$depart = $_REQUEST['DEPART'];
 
-
-
-echo "<em>FNAME: </em>&nbsp;" . $fname . "<br />";
-echo "<em>LNAME: </em>&nbsp;" . $lname . "<br />";
-echo "<em>DEPART: </em>&nbsp;" . $depart . "<br />";
-error_reporting(E_ALL);
+ error_reporting(E_ALL);
 
 $link = mysqli_connect("localhost","DEVTEST","test","testDEV",3306);
 if (!$link)
@@ -31,26 +26,29 @@ if (!$link)
 	echo mysqli_connect_errno() . PHP_EOL;
 
 }
-/* REFERENCE => INSERT tbl_04302018 (FNAME,LNAME,emp_DEPART) values('testF1','testL1','testD1');*/
+
+// REFERENCE => INSERT tbl_04302018 (FNAME,LNAME,emp_DEPART) values('testF1','testL1','testD1');
 
 $insSTR = "INSERT tbl_04302018 (FNAME,LNAME,emp_DEPART) values('$fname','$lname','$depart');";
 
-echo "==> Inserting....";
+$message = "";
 
 $res = mysqli_query($link,$insSTR,MYSQLI_STORE_RESULT);
 
 if (!$res)
 {
-	$message = "invalid insert: " . mysql_error(). "\n";
-	$message = "querySTR: \n" . $insSTR;
+	$message = "FAIL";
+	echo $message;
 	die($message);
 }
 
-echo "Sucessfully added record." . PHP_EOL;
+$message = "SUCCESS";
+
+echo $message;
 
 mysqli_free_result($res);
 
-mysqli_close($link);
-
+mysqli_close($link); 
 
 ?>
+

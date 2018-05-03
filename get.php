@@ -54,7 +54,9 @@
 	$conSTR = $opener . $middle . $close;
 	echo $conSTR;
 
-	$arRES = mysqli_fetch_all($res,MYSQLI_BOTH);
+	mysqli_free_result($res);
+
+	mysqli_close($link); 
 
 	
 ?>

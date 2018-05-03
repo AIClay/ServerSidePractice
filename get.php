@@ -56,10 +56,6 @@
 
 	$arRES = mysqli_fetch_all($res,MYSQLI_BOTH);
 
-	// DEBUG
-	//echo $arRES;
-	// END DEBUG
-	
 	
 ?>
 

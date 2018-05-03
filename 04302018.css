@@ -3,22 +3,144 @@
 /
 /  // Auth: Aaron I. Clay
 /  // 0635 EST [04302018] 
-/  // V 1.0.0 
+/  // V 1.0.1 
 /
 /
 */
 
 
+/* CONTAINER 1 Styling */
+div.cnt1
+{
+	padding:10px;
+	position:fixed;
+	left:30px;
+	margin-top:30px;
+	box-shadow:2px 2px 7px grey;
+	border-radius:5px;
+	width:450px;
+}
+
+/* END CONTAINER 1 Styling */
+
+
+
+
+/* INPUT [TEXT FIELDS] Styling */
+/* 2x Txt Fields && 1x OPT Field */
+/* 1x BTN input */
+
+.txtFNAME
+{
+	position:relative;
+	font-family:"Verdana",sans-serif;
+	font-size:16px;
+	color:blue;
+	
+	margin-top:5px;
+}
+.txtLNAME
+{
+	position:relative;
+	font-family:"Verdana",sans-serif;
+	font-size:16px;
+	color:black;
+	
+	margin-top:5px;
+}
+.optDEPART
+{
+	position:relative;
+	font-family:"Verdana",sans-serif;
+	font-size:16px;
+	color:blue;
+	
+	margin-top:5px;
+}
+.slctDepart
+{
+	position:relative;
+	font-family:"Verdana",sans-serif;
+	font-size:16px;
+	left:57px;
+	color:red;
+}
+.slctDepart:hover
+{
+	cursor:pointer;
+}
+
+.btnINS
+{
+	position:relative;
+	font-family:"Verdana",sans-serif;
+	font-size:16px;
+	border-radius:10px;	
+	left:70px;
+	margin-top:20px;
+	margin-bottom:20px;
+	background-color:#CCC;
+	color:white;
+	text-shadow:2px 2px 2px black;
+	box-shadow:2px 2px 3px black;
+}
+.btnINS:hover
+{
+	cursor:pointer;
+}
+
+/* END 'CONTROLS / FIELD Styling */
+
+
+
+/* XHR Results Styling */
+
 span.recLineID
 {
 	font-family:"Verdana",sans-serif;
-	font-size:1.2em;
+	font-size:14px;
 	color:green;
 }
 
 span.recLineFNAME
 {
 	font-family:"Courier New",monospace;
-	font-size:1.2em;
+	font-size:14px;
 	color:blue;
 }
+
+span.recLineDEPART
+{
+	font-family:"Courier New",monospace;
+	font-size:14px;
+	color:red;
+}
+
+span.recLineLNAME
+{
+	font-family:"Verdana",sans-serif;
+	font-size:14px;
+	color:black;
+	
+}
+	/* FAUX TABLE-LESS 'TABLE' Styling => DIV Based Class */
+div.display
+{
+	position:relative;
+	left:10px;
+	margin-top:30px;
+	padding-top:20px;
+	padding-left:20px;
+	border-style:solid;
+	border-radius:9px;
+	border-color:grey;
+	border-width:0.5px;
+	height:auto;
+	width:400px;
+	box-shadow:2px 2px 10px #CCC;
+	overflow:scroll;
+	
+}
+
+/* END XHR Results Styling */
+

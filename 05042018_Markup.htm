@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset='UTF-8' >
+		<title>5-4-2018</title>
+		<!-- used inline styles for svg returned object NO EXTERNAL CSS -->
+		<script type='text/javascript' src='js/05042018.js'></script>
+	</head>
+	<body onload = init(); >
+		<h1>Practice [POST] => PHP => AJAX ResponseText</h1>
+		<h3>Plain text response</h3>
+		<hr />
+		<div id='mth' class='mth'>
+			<br />
+			<br />
+			<span id='num1' class='num1'>Number 1: </span>&nbsp;<input id='num1Val' type='textarea'  value="0" name="num1Val" />
+			<br />
+			<br />
+			<span id='num2' class='num2'>Number 2: </span>&nbsp;<input id='num2Val' type='textarea' value="0" name="num2Val" />
+			<br />
+			<br />
+			<br />
+			<input type='button' value='[ADD=>PHP / AJAX => Return { } SVG SHAPE]' onclick=AddThem(); />
+		</div>
+		<div id='display'>
+			<span id='ans' class='ans'> </span>
+		</div>
+	</body>
